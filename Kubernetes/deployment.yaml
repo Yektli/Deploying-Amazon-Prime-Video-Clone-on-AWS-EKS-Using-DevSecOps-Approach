@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prime-app
+  labels:
+    app: prime-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prime-app
+  template:
+    metadata:
+      labels:
+        app: prime-app
+    spec:
+      containers:
+      - name: prime-app
+        image: amonkincloud/amazon-prime:latest
+        ports:
+        - containerPort: 3000
