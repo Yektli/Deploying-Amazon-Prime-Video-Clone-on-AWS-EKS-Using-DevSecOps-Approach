@@ -15,6 +15,26 @@ This project showcases a robust deployment approach for a streaming service by u
 
 ![Picture1](https://github.com/user-attachments/assets/c8e43dc4-0eb3-4ba1-b435-762e336762b8)
 
+### Development summarized in steps
+- Code Checkout & Analysis: Jenkins fetches the source code from GitHub and performs SonarQube analysis.
+- Security Scans: OWASP and Trivy scan the codebase for vulnerabilities.
+- Dockerization: Jenkins builds, tags, and pushes the Docker image to DockerHub.
+- Deployment: The Docker image is deployed to AWS EC2 containers and monitored using Prometheus.
+- Monitoring Setup: Prometheus and Grafana are configured to collect and visualize performance metrics.
+- ArgoCD Deployment: ArgoCD automates the deployment of the application to Kubernetes, allowing for automatic sync and self-healing.
+- Final Cleanup: AWS EC2 instances are terminated once the deployment process is completed.
+
+### Key Technologies and Tools:
+- Jenkins: Used as the CI/CD pipeline tool, automating each stage of deployment.
+- SonarQube: For static code analysis to ensure code quality and security.
+- OWASP Dependency Check: Scans for vulnerabilities in project dependencies.
+- Trivy: A tool for scanning file systems for vulnerabilities.
+- Docker: Used to containerize the application, build Docker images, and push them to DockerHub.
+- Prometheus & Node Exporter: For monitoring the application and infrastructure.
+- Grafana: Provides a dashboard for visualizing metrics.
+- ArgoCD: Manages continuous deployment to Kubernetes.
+- Kubernetes: Orchestrates the deployed containers.
+- AWS EC2: Hosts instances for the application and its supporting services.
  
 # Jenkins Complete pipeline
 ```
